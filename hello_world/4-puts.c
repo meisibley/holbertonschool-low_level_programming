@@ -2,7 +2,6 @@
 
 /**
  * main - puts
- * @parameterx: print a string
  *
  * Return: Always 0 (Success)
  */

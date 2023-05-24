@@ -1,9 +1,9 @@
+#include <stdio.h>
 /**
  * main - prints the size of various types
  *
  * Return - always be 0
  */
-#include <stdio.c>
 int main(void)
 {
 	int i;

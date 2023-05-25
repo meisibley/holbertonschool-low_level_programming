@@ -13,7 +13,10 @@ int main(void)
 	{
 		putchar(48 + i);
 		if (i < 9)
-		putchar(', ');
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
 	putchar('\n');
 	return (0);

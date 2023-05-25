@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints all possible different combinations of two different digis, w/o repeat
+ * main - prints all possible diff comb of two diff digis, w/o repeat
  *
  * Return: 0 for success
  */

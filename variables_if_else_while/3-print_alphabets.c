@@ -5,7 +5,7 @@
  * Return: 0 for success
  */
 
-int main (void)
+int main(void)
 {
 	char c;
 
@@ -13,7 +13,7 @@ int main (void)
 		putchar(c);
 	for (c='A'; c<='Z'; ++c)
 		putchar(c);
-	putchar('\n');
+	putchar('\$\n');
 
 	return (0);
 }

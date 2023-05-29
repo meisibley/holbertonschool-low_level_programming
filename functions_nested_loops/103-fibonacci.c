@@ -18,9 +18,8 @@ int main(void)
 		j = i;
 		i = f;
 		f = f + j;
-		e = f % 10;
-		if ((e % 2) == 0)
-			total += total;
+		if ((f % 2) == 0)
+			total += f;
 	}
 	printf("%lu", total);
 	return (0);

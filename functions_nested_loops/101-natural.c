@@ -15,18 +15,12 @@ int main(void)
 	s51 = 0;
 	s52 = 0;
 	for (i = 1; i <= n; i++)
-	{
 		s3 += i * 3;
-		printf("%d, ", s3);
-	}
 	for (j = 1; j <= m; j++)
 	{
 		s51 = j * 5;
 		if ((s51 % 15) != 0)
-		{
 			s52 += s51;
-			printf("%d, ", s52);
-		}
 	}
 	t = s3 + s52;
 	printf("%d\n", t);

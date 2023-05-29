@@ -54,7 +54,7 @@ void print_times_table(int n)
 			else if (((i * j) >= 100) && ((i * j) < 1000))
 				printf(", %d", i * j);
 			}
-			else if (j == n) 
+			else if (j == n)
 				{
 				if ((i * j) < 10)
 					printf(",   %d\n", i * j);

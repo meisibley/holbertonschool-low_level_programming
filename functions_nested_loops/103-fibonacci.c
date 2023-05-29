@@ -13,7 +13,7 @@ int main(void)
 	i = 1;
 	f = 2;
 	printf("%lu, %lu", i, f);
-	While (f <= 4000000)
+	while (f <= 4000000)
 	{
 		printf(", ");
 		j = i;
@@ -23,4 +23,5 @@ int main(void)
 		if ((e % 2) == 0)
 			printf("%lu", f);
 	}
+	return (0);
 }

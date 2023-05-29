@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i;
-	unsigned long int j, k, f;
+	double long int j, k, f;
 
 	j = 1;
 	f = 2;
@@ -19,9 +19,9 @@ int main(void)
 		j = f;
 		f = k + f;
 		if (i != 96)
-			printf("%lld, ", f);
+			printf("%lu, ", f);
 		else
-			printf("%lld", f);
+			printf("%lu", f);
 	}
 	printf("\n");
 	return (0);

@@ -8,20 +8,20 @@
 int main(void)
 {
 	int e;
-	long int i, j, f;
+	long int i, j, f, total;
 
 	i = 1;
 	f = 2;
-	printf("%lu, %lu", i, f);
+	total = f;
 	while (f <= 4000000)
 	{
-		printf(", ");
 		j = i;
 		i = f;
 		f = f + j;
 		e = f % 10;
 		if ((e % 2) == 0)
-			printf("%lu", f);
+			total += total;
 	}
+	printf("%lu", total);
 	return (0);
 }

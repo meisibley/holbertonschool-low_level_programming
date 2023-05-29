@@ -18,7 +18,7 @@ int main(void)
 		k = j;
 		j = f;
 		f = k + f;
-		if (i != 48 )
+		if (i != 48)
 			printf("%lu, ", f);
 		else
 			printf("%lu", f);

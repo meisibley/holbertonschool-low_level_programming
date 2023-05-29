@@ -19,9 +19,9 @@ int main(void)
 		j = f;
 		f = k + f;
 		if (i != 96)
-			printf("%llu, ", f);
+			printf("%lu, ", f);
 		else
-			printf("%llu", f);
+			printf("%lu", f);
 	}
 	printf("\n");
 	return (0);

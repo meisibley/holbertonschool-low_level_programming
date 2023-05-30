@@ -20,8 +20,13 @@ int main(void)
 			putchar(48 + i);
 			putchar(48 + j);
 			putchar(48 + k);
-			putchar(',');
-			putchar(' ');
+			if (i == 7 && j == 8 && k == 9)
+				continue;
+			else
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 	}

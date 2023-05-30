@@ -12,7 +12,7 @@ int main(void)
 	for (i = 0; i <= 9; i++)
 	for (j = 0; j <= 8; j++)
 	for (m = i; m <= 9; m++)
-	for (n = j + 1; n <= 9; n++)
+	for (n = 0; n <= 9; n++)
 	{
 		s1 = i * 10 + j;
 		s2 = m * 10 + n;

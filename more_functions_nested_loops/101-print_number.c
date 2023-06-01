@@ -6,7 +6,7 @@
  * @n: input number
  * Return: no return
  */
-void print_number(int n)
+void print_number(long int n)
 {
 	int i, j, j1, n1, n2;
 	int flag = 0;

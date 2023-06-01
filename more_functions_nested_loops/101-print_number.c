@@ -57,8 +57,7 @@ void print_number(int n)
 		for (i = 1000000000; i > 0; i = i / 10)
 		{
 			j1 = n1 / i;
-			if (j1 != 0)
-				flag = 1;
+			if (j1 != 0) flag = 1;
 			if (j1 != 0 || flag == 1)
 				_putchar(j1 + '0');
 			n1 = n1 - (n1 / i) * i;

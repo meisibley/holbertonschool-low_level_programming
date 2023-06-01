@@ -6,7 +6,7 @@
  */
 void print_number(int n)
 {
-	int i, j, j1, n1, n2;
+	int i, j, j1, n1;
 	int flag = 0;
 
 	if (n == 0)
@@ -36,7 +36,7 @@ void print_number(int n)
 		}
 	else if (n < -2147483647)
 	{
-		n1 = -n / 10, n2 = -n % 10, _putchar('-');
+		n1 = -n / 10, _putchar('-');
 		for (i = 100000000; i > 0; i = i / 10)
 		{
 			j1 = n1 / i;

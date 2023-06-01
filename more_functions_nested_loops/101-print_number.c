@@ -56,7 +56,7 @@ void print_number(int n)
 				_putchar(j1 + '0');
 			n1 = n1 - (n1 / i) * i;
 		}
-		for (i = 1000; i > 0; i = i / 10)
+		for (i = 100; i > 0; i = i / 10)
 		{
 			j2 = n2 / i;
 			if (j2 != 0 || flag == 1)
@@ -78,7 +78,7 @@ void print_number(int n)
 				_putchar(j1 + '0');
 			n1 = n1 - (n1 / i) * i;
 		}
-		for (i = 1000; i > 0; i = i / 10)
+		for (i = 100; i > 0; i = i / 10)
 		{
 			j2 = n2 / i;
 

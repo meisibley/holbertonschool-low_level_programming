@@ -19,7 +19,7 @@ void print_number(int n)
 		n = -n;
 		_putchar('-');
 
-		for (i = 1000; i > 0; i = i / 10)
+		for (i = 1000000000; i > 0; i = i / 10)
 		{
 			j = n / i;
 			if (j != 0)
@@ -31,7 +31,7 @@ void print_number(int n)
 		}
 	}
 	else if (n > 0)
-		for (i = 1000; i > 0; i = i / 10)
+		for (i = 1000000000; i > 0; i = i / 10)
 		{
 			j = n / i;
 			if (j != 0)

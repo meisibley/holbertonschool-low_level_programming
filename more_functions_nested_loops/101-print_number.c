@@ -1,13 +1,11 @@
 #include "main.h"
-
 /**
  * print_number - a function prints an integer
  * @n: input number
  */
 void print_number(int n)
 {
-	int i, j, j1, n1;
-	int flag = 0;
+	int i, j, j1, n1, flag = 0;
 
 	if (n == 0)
 		_putchar(0 + '0');

@@ -49,7 +49,7 @@ void print_number(int n)
 				_putchar(j1 + '0');
 			n1 = n1 - (n1 / i) * i;
 		}
-		_putchar(n2 + '0');
+		_putchar(8 + '0');
 	}
 	else if (n > 2147483647)
 	{

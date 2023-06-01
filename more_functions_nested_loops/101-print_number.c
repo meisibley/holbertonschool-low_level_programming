@@ -3,7 +3,6 @@
 /**
  * print_number - a function prints an integer
  * @n: input number
- * Return: no return
  */
 void print_number(int n)
 {
@@ -14,8 +13,7 @@ void print_number(int n)
 		_putchar(0 + '0');
 	else if (n < 0 && n >= -2147483647)
 	{
-		n = -n;
-		_putchar('-');
+		n = -n, _putchar('-');
 		for (i = 1000000000; i > 0; i = i / 10)
 		{
 			j = n / i;
@@ -57,7 +55,8 @@ void print_number(int n)
 		for (i = 1000000000; i > 0; i = i / 10)
 		{
 			j1 = n1 / i;
-			if (j1 != 0) flag = 1;
+			if (j1 != 0)
+				flag = 1;
 			if (j1 != 0 || flag == 1)
 				_putchar(j1 + '0');
 			n1 = n1 - (n1 / i) * i;

@@ -9,7 +9,8 @@ void print_number(int n)
 
 	if (n == 0)
 		_putchar(0 + '0');
-	else if (n < 0 && n >= -2147483647) {
+	else if (n < 0 && n >= -2147483647)
+	{
 		n = -n, _putchar('-');
 		for (i = 1000000000; i > 0; i = i / 10)
 		{

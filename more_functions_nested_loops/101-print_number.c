@@ -1,14 +1,15 @@
 #include "main.h"
-/*print_number - a function prints an integer
- * @n: input number */
+/**
+ * print_number - a function prints an integer
+ * @n: input number 
+ */
 void print_number(int n)
 {
 	int i, j, j1, n1, flag = 0;
 
 	if (n == 0)
 		_putchar(0 + '0');
-	else if (n < 0 && n >= -2147483647)
-	{
+	else if (n < 0 && n >= -2147483647){
 		n = -n, _putchar('-');
 		for (i = 1000000000; i > 0; i = i / 10)
 		{

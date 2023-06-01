@@ -8,7 +8,7 @@
  */
 void print_number(int n)
 {
-	int i, j, j1, j2, n1, n2;
+	int i, j, j1, n1, n2;
 	int flag = 0;
 
 	if (n == 0)
@@ -42,8 +42,8 @@ void print_number(int n)
 		}
 	else if (n < -2147483647)
 	{
-		n1 = -n / 1000;
-		n2 = -n % 1000;
+		n1 = -n / 10;
+		n2 = -n % 10;
 		_putchar('-');
 
 		for (i = 100000000; i > 0; i = i / 10)
@@ -56,18 +56,12 @@ void print_number(int n)
 				_putchar(j1 + '0');
 			n1 = n1 - (n1 / i) * i;
 		}
-		for (i = 100; i > 0; i = i / 10)
-		{
-			j2 = n2 / i;
-			if (j2 != 0 || flag == 1)
-				_putchar(j2 + '0');
-			n2 = n2 - (n2 / i) * i;
-		}
+		_putchar(n2 + '0');
 	}
 	else if (n > 2147483647)
 	{
-		n1 = -n / 1000;
-		n2 = -n % 1000;
+		n1 = -n / 10;
+		n2 = -n % 10;
 		for (i = 1000000000; i > 0; i = i / 10)
 		{
 			j1 = n1 / i;
@@ -78,13 +72,6 @@ void print_number(int n)
 				_putchar(j1 + '0');
 			n1 = n1 - (n1 / i) * i;
 		}
-		for (i = 100; i > 0; i = i / 10)
-		{
-			j2 = n2 / i;
-
-			if (j2 != 0 || flag == 1)
-				_putchar(j2 + '0');
-			n2 = n2 - (n2 / i) * i;
-		}
+		_putchar(n2 + '0');
 	}
 }

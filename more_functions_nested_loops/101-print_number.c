@@ -9,9 +9,12 @@ void print_number(int n)
 
 	if (n == 0)
 		_putchar(0 + '0');
-	else if (n < 0 && n >= -2147483647)
+	else if (n < 0 && n >= -2147483647) || (n > 0 && n <= 2147483647)
 	{
-		n = -n, _putchar('-');
+		if (n < 0)
+		{
+			n = -n, _putchar('-');
+		}
 		for (i = 1000000000; i > 0; i = i / 10)
 		{
 			j = n / i;
@@ -22,16 +25,6 @@ void print_number(int n)
 			n = n - (n / i) * i;
 		}
 	}
-	else if (n > 0 && n <= 2147483647)
-		for (i = 1000000000; i > 0; i = i / 10)
-		{
-			j = n / i;
-			if (j != 0)
-				flag = 1;
-			if (j != 0 || flag == 1)
-				_putchar(j + '0');
-			n = n - (n / i) * i;
-		}
 	else if (n < -2147483647)
 	{
 		n1 = (n * (-1)) / 10, n2 = (n * (-1)) % 10, _putchar('-');

@@ -25,7 +25,7 @@ void print_number(int n)
 			n = n - (n / i) * i;
 		}
 	}
-	else
+	else if (n > 2147483647)
 	{
 		_putchar(2 + '0');
 		_putchar(1 + '0');

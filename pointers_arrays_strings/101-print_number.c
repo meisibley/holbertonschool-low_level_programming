@@ -11,7 +11,7 @@ void print_number(int n)
 
 	if (n == 0)
 		_putchar(0 + '0');
-	else if (n < 0)
+	else if (n < 0 && n >= -2147483647)
 	{
 		_putchar('-'), n = n * (-1);
 	}
@@ -26,17 +26,12 @@ void print_number(int n)
 			n = n - (n / i) * i;
 		}
 	}
-	else if (n == INT_MIN)
+	else
 	{
-		_putchar(2 + '0');
-		_putchar(1 + '0');
-		_putchar(4 + '0');
-		_putchar(7 + '0');
-		_putchar(4 + '0');
-		_putchar(8 + '0');
-		_putchar(3 + '0');
-		_putchar(6 + '0');
-		_putchar(4 + '0');
-		_putchar(8 + '0');
+		if (n < -2147483647)
+			_putchar('-');
+		_putchar(2 + '0'), _putchar(1 + '0'), _putchar(4 + '0'), _putchar(7 + '0');
+		_putchar(4 + '0'), _putchar(8 + '0'), _putchar(3 + '0'), _putchar(6 + '0');
+		_putchar(4 + '0'), _putchar(8 + '0');
 	}
 }

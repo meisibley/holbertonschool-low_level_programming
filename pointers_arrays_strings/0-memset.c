@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _memset(char *s, char b, unsigned int n)
+ * _memset - a function that fills memory with a constant byte
  * @s: a pointer points a memory area
  * @b: the byte to fill a cercen area of memory s
  * @n: the length of filling

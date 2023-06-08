@@ -29,7 +29,7 @@ void simple_print_buffer(char *buffer, unsigned int size)
 }
 
 /**
- * main - fills memory with a constant byte
+ * main - copies memory area
  * Return: Always 0.
  */
 int main(void)
@@ -38,7 +38,7 @@ int main(void)
 	char buffer2[98] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
 	simple_print_buffer(buffer, 98);
-	_memset(buffer, 0x01, 95);
+	_memcpy(buffer + 50, buffer2, 10);
 	printf("------------------------------------------------\n");
 	simple_print_buffer(buffer, 98);
 	return (0);

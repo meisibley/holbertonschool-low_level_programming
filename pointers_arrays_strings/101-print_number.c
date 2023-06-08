@@ -26,7 +26,7 @@ void print_number(int n)
 			n = n - (n / i) * i;
 		}
 	}
-	else if (n == INT_MAX)
+	else if (n == INT_MIN)
 	{
 		_putchar(2 + '0');
 		_putchar(1 + '0');

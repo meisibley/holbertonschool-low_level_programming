@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * print_number - a function that prints an integer
@@ -25,7 +26,7 @@ void print_number(int n)
 			n = n - (n / i) * i;
 		}
 	}
-	else if (n > 2147483647)
+	else
 	{
 		_putchar(2 + '0');
 		_putchar(1 + '0');

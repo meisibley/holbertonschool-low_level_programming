@@ -17,52 +17,52 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		j2++;
 	if (j1 >= size_r)
 		return (0);
-if (j1 > j2)
-{
-for (i = j1 - 1; i >= j1 - j2; i--)
-{
-	if (carry > 0)
+	if (j1 > j2)
 	{
-		r[i] = 49, carry = 0;
+		for (i = j1 - 1; i >= j1 - j2; i--)
+		{
+			if (carry > 0)
+			{
+				r[i] = 49, carry = 0;
+			}
+			else
+				r[i] = 48;
+			r[i] += n1[i] + n2[i - j1 + j2] - 96;
+			if (r[i] > 57)
+			{
+				carry = 1, r[i] = r[i] - 10;
+			}
+		}
+		for (i = j1 - j2 - 1; i >= 0; i--)
+		{
+			if (carry > 0)
+			{
+				r[i] = 49, carry = 0;
+			}
+			else
+				r[i] = 48;
+			r[i] += n1[i] - 48;
+			if (r[i] > 57)
+			{
+				carry = 1, r[i] = r[i] - 10;
+			}
+		}
 	}
 	else
-		r[i] = 48;
-	r[i] += n1[i] + n2[i - j1 + j2] - 96;
-	if (r[i] > 57)
-	{
-		carry = 1, r[i] = r[i] - 10;
-	}
-}
-for (i = j1 - j2 - 1; i >= 0; i--)
-{
-	if (carry > 0)
-	{
-		r[i] = 49, carry = 0;
-	}
-	else
-		r[i] = 48;
-	r[i] += n1[i] - 48;
-	if (r[i] > 57)
-	{
-		carry = 1, r[i] = r[i] - 10;
-	}
-}
-}
-else
-for (i = j1 - 1; i >= 0; i--)
-{
-	if (carry > 0)
-	{
-		r[i] = 49, carry = 0;
-	}
-	else
-		r[i] = 48;
-	r[i] += n1[i] + n2[i] - 96;
-	if (r[i] > 57)
-	{
-		carry = 1, r[i] = r[i] - 10;
-	}
-}
+		for (i = j1 - 1; i >= 0; i--)
+		{
+			if (carry > 0)
+			{
+				r[i] = 49, carry = 0;
+			}
+			else
+				r[i] = 48;
+			r[i] += n1[i] + n2[i] - 96;
+			if (r[i] > 57)
+			{
+				carry = 1, r[i] = r[i] - 10;
+			}
+		}
 	if (carry > 0)
 	{
 		r[j1 + 1] = '\0';

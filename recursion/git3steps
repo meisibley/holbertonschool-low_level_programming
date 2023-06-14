@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Please input task name: "
+read tname
+git add $tname
+git commit -m "$tname"
+git push

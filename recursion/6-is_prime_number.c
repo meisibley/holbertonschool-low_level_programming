@@ -26,7 +26,9 @@ int pri_num(int n, int i)
 	if (i < n)
 	{
 		if (n % i == 0)
+		{
 			return (0);
+		}
 		else
 		{
 		i++;

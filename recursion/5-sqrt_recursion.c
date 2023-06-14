@@ -39,4 +39,5 @@ int _sqrt_recursion(int n)
 		return (11 * _sqrt_recursion(n));
 	}
 	else
+	{}
 }

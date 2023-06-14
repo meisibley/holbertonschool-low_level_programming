@@ -24,5 +24,5 @@ int calsqrt(int n, int r)
 		return (n);
 	if (r * r == n)
 		return (r);
-	return (calsqrt(n, r + 1);
+	return (calsqrt(n, r + 1));
 }

@@ -28,8 +28,10 @@ int pri_num(int n, int i)
 		if (n % i == 0)
 			return (0);
 		else
+		{
 		i++;
 		return (pri_num(n, i));
+		}
 	}
 	else
 		return (1);

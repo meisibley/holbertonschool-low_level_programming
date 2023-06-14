@@ -36,6 +36,6 @@ int _sqrt_recursion(int n)
 		n = n / 121;
 		return (11 * _sqrt_recursion(n / 121));
 	}
-	else if (n % 4 != 0 || n % 9 != 0 || n % 25 != 0 || n % 49 ! = 0)
+	else if (n % 4 != 0 || n % 9 != 0 || n % 25 != 0 || n % 49 != 0)
 		return (-1);
 }

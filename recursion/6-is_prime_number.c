@@ -24,11 +24,13 @@ int is_prime_number(int n)
 int pri_num(int n, int i)
 {
 	if (i < n)
+	{
 		if (n % i == 0)
 			return (0);
 		else
 		i++;
 		return (pri_num(n, i));
+	}
 	else
 		return (1);
 }

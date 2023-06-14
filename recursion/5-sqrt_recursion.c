@@ -7,7 +7,7 @@
  */
 int _sqrt_recursion(int n)
 {
-	return calsqrt(n, 0);
+	return (calsqrt(n, 0));
 }
 
 /**

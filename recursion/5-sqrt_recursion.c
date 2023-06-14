@@ -11,7 +11,9 @@ int _sqrt_recursion(int n)
 		return (-1);
 	if (n == 0 || n == 1)
 		return (n);
-	if (n / 4 == 0)
+	if (n % 4 != 0 || n % 9 != 0 || n % 25 != 0 || n % 49 != 0)
+		return (-1);
+	else if (n / 4 == 0)
 	{
 		n = n / 4;
 		return (2 * _sqrt_recursion(n));
@@ -36,8 +38,5 @@ int _sqrt_recursion(int n)
 		n = n / 121;
 		return (11 * _sqrt_recursion(n));
 	}
-	else if (n % 4 != 0 || n % 9 != 0 || n % 25 != 0 || n % 49 != 0)
-		return (-1);
 	else
-		return (0);
 }

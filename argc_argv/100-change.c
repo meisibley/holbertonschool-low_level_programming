@@ -7,7 +7,7 @@
  * @argv: 2 only, first is excuable file, second is amount of money
  * Return: 0 negative amount of money, 1 wrong argc number, ttlc
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int i, amt = 0, ttlc = 0;
 	int coin[5] = {25, 10, 5, 2, 1};

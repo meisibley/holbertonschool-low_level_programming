@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		sum = argv[1] * argv[2];
+		sum = (int)argv[1] * (int)argv[2];
 		printf("%d\n", sum);
 		return (0);
 	}

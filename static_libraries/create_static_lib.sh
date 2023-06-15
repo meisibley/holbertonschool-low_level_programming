@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc -c *.c
-ar -rc liball.a *.o
+find -type f -name "\*.c" | gcc -c *
+ar rcs liball.a *.o

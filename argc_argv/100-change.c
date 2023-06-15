@@ -34,7 +34,7 @@ int main (int argc, char *argv[])
 			}
 		}
 		ttlc += amt;
+		printf("%d\n", ttlc);
+		return (0);
 	}
-	printf("%d\n", ttlc);
-	return (ttlc);
 }

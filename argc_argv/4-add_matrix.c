@@ -10,9 +10,8 @@
 int main(int argc, char *argv[])
 {
 	int i, j, sum = 0;
-	char *p;
 
-	if (argc == 2 && atoi(argv[1]) > 0)
+	if (argc == 2 && atoi(argv[1]) >= 0)
 		printf("%d\n", atoi(argv[1]));
 	else if (argc < 2)
 		printf("0\n");
@@ -20,19 +19,18 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			p = argv[i];
-			if (p[0] != 45)
+		if (argv[i][0] != 45)
+		{
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] < 48 || argv[i][j] > 57)
 			{
-			for (j = 0; p[j] != '\0'; j++)
-			{
-				if (p[j] < 48 || p[j] > 57)
-				{
-					printf("Error\n");
-					return (1);
-				}
+				printf("Error\n");
+				return (1);
 			}
-			sum += atoi(argv[i]);
-			}
+		}
+		sum += atoi(argv[i]);
+		}
 		}
 		printf("%d\n", sum);
 	}

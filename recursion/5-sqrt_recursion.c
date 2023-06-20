@@ -18,7 +18,7 @@ int _sqrt_recursion(int n)
  */
 int calsqrt(int n, int r)
 {
-	if (n < 0)
+	if (n < 0 || r == n)
 		return (-1);
 	if (n == 0 || n == 1)
 		return (n);

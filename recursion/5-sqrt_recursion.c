@@ -13,7 +13,7 @@ int _sqrt_recursion(int n)
 /**
  * calsqrt - use recursion to calculate square root
  * @n: origin number
- * @r: result
+ * @r: result square root
  * Return: result
  */
 int calsqrt(int n, int r)

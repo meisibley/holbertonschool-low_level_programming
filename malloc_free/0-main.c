@@ -8,8 +8,6 @@
  * @size: the size of the memory to print
  * Return: Nothing.
  */
-char *create_array(unsigned int size, char c);
-
 void simple_print_buffer(char *buffer, unsigned int size)
 {
 	unsigned int i;

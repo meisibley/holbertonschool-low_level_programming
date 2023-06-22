@@ -22,16 +22,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (j = 0; s2[j] != '\0'; j++)
 	{
 	}
-	if (j < n)
-		n = j;
 	cc = malloc(sizeof(char) * (i + n + 1));
 	if (cc == NULL)
 	{
-		free(cc);
 		return (NULL);
 	}
 	for (i = 0; s1[i] != '\0'; i++)
 		cc[i] = s1[i];
-	strncat (cc, s2, n);
+	for (j = i; j < (n + i) && s2[j - i] != '\0'; j++)
+		cc[j] = s2[j - i];
+	cc[j] = '\0';
 	return (cc);
 }

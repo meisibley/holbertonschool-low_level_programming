@@ -6,7 +6,7 @@
  * main - prints the name of the file it was compiled from
  * Return: Always 0.
  */
-int main(argc, argv[])
+int main(int argc, char *argv[])
 {
 	if (argc)
 		printf ("%s\n", argv[0]);

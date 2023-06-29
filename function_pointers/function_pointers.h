@@ -6,6 +6,9 @@
 
 /**
  * function_pointers - function pointers
+ * print_name - print name
+ * @name: name
+ * @f: a function pointer
  * Return: nothing
  */
 

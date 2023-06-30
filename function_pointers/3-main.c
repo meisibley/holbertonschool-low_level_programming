@@ -10,18 +10,20 @@
 int main(int argc, char *argv[])
 {
 	int res;
+	int *oppo;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	else if ((argv[2][0] != '+' && argv[2][0] != '-' && argv[2][0] != '*' && argv[2][0] != '/' && argv[2][0] != '%') || strlen(argv[2]) > 1)
+	oppo = (*get_op_func(argv[2]);
+	if (!oppo || strlen(argv[2]) > 1)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	else if ((argv[2][0] == '/' || argv[2][0] == '%') && atoi(argv[3]) == 0)
+	if ((argv[2][0] == '/' || argv[2][0] == '%') && atoi(argv[3]) == 0)
 	{
 		printf("Error\n");
 		exit(100);

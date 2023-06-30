@@ -7,7 +7,7 @@
  * @b: second number
  * Return: a pointer to the correspond function
  */
-int (*get_op_func(char *s))(int a, int b)
+int (*get_op_func(char *s))(int, int)
 {
 	int i = 0;
 	op_t ops[] = {

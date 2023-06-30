@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	oppo = (*get_op_func(argv[2]);
+	oppo = (*get_op_func(argv[2]));
 	if (!oppo || strlen(argv[2]) > 1)
 	{
 		printf("Error\n");

@@ -1,5 +1,4 @@
 #include "variadic_functions.h"
-#include <string.h>
 
 /**
  * print_all - a function that prints anything
@@ -8,13 +7,12 @@
  */
 void print_all(const char * const format, ...)
 {
-	int lfmt, i = 0, flag = 0;
+	int i = 0, flag = 0;
 	char *separator = "", *nilstr;
 	va_list ap;
 
 	va_start(ap, format);
-	lfmt = strlen(format);
-	while (i < lfmt)
+	while (format && format[i])
 	{
 		switch (format[i])
 		{

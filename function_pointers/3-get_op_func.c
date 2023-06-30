@@ -3,8 +3,6 @@
 /**
  * get_op_func - selects the correct function to perform
  * @s: operation sign
- * @a: first number
- * @b: second number
  * Return: a pointer to the correspond function
  */
 int (*get_op_func(char *s))(int, int)

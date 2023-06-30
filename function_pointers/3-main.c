@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int res;
-	int *oppo;
+	int (*oppo)(int, int);
 
 	if (argc != 4)
 	{

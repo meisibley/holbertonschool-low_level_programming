@@ -29,7 +29,8 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	while ((r = read(fdfr, buf, BFSIZE)) > 0) /*read from file_from*/
-	{if (write(fdto, buf, r) != r) /*write to file_to*/
+	{
+		if (write(fdto, buf, r) != r) /*write to file_to*/
 		{dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(fdfr), close(fdto);
 			exit(99);

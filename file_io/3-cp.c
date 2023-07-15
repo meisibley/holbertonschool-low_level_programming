@@ -11,7 +11,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int r, w, clsf, clst, fdfr, fdto; /* Declaration of file descriptors */
+	int r, clsf, clst, fdfr, fdto; /* Declaration of file descriptors */
 	char buf[BFSIZE];
 
 	if (argc != 3)
@@ -20,17 +20,22 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	fdfr = open(argv[1], O_RDONLY); /*open file_from*/
-	fdto = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664); /*open file_to*/
+	if (fdfr < 0)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		close(fdfr);
+		exit(98);
+	}
+	fdto = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664); /*open file_to*/
+	if (fdto < 0)
+	{
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		close(fdfr), close(fdto);
+		exit(99);
+	}
 	while ((r = read(fdfr, buf, BFSIZE)) > 0)
 	{
-		if (fdfr < 0 || r < 0)
-		{
-			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-			close(fdfr);
-			exit(98);
-		}
-		w = write(fdto, buf, BFSIZE); /*write to file_to*/
-		if (fdto < 0 || w < 0)
+		if (write(fdto, buf, r) != r) /*write to file_to*/
 		{
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			close(fdfr), close(fdto);

@@ -1,6 +1,4 @@
 #include "main.h"
-#include <errno.h>
-#include <string.h>
 
 /**
  * main - copies the content of a file to another file
@@ -11,25 +9,25 @@
  */
 int main(int argc, char *argv[])
 {
-	int r, clsf, clst, fdfr, fdto; /* Declaration of file descriptors */
+	int r, fdfr, fdto; /* Declaration of file descriptors */
 	char buf[BFSIZE];
 
 	if (argc != 3)
 	{
-		dprintf(3, "Usage: cp %s %s\n", argv[1], argv[2]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	fdfr = open(argv[1], O_RDONLY); /*open file_from*/
 	if (fdfr < 0)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		close(fdfr);
 		exit(98);
 	}
 	fdto = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664); /*open file_to*/
 	if (fdto < 0)
 	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		close(fdfr), close(fdto);
 		exit(99);
 	}
@@ -37,20 +35,24 @@ int main(int argc, char *argv[])
 	{
 		if (write(fdto, buf, r) != r) /*write to file_to*/
 		{
-			dprintf(2, "Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(fdfr), close(fdto);
 			exit(99);
 		}
 	}
-	clsf = close(fdfr), clst = close(fdto); /*close file descriptors*/
-	if (clsf < 0)
+	if (r < 0)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", clsf);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	if (close(fdfr) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[1]);
 		exit(100);
 	}
-	if (clst < 0)
+	if (close(fdto) < 0)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", clst);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[2]);
 		exit(100);
 	}
 	return (0);

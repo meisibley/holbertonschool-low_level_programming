@@ -13,13 +13,15 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *node, *nodelist;
 
 	if (*head == NULL)
+	{
 		return (-1);
-	node = malloc(sizeof(listint_t));
+	}
+	/*node = malloc(sizeof(listint_t));
 	if (node == NULL)
 	{
 		free(node);
 		return (-1);
-	}
+	}*/
 	nodelist = *head;
 	if (index == 0)
 	{
@@ -35,8 +37,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		i++;
 	}
 	if (i < index) /*list is shorter than index number*/
+	{
 		return (-1);
+	}
 	node->next = nodelist->next; /*node jump over nodelist*/
+	/*free(node);*/
 	free(nodelist);
 	return (1);
 }

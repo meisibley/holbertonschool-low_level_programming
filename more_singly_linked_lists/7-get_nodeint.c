@@ -26,7 +26,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		if (i == index) /*found the node*/
 		{
 			node = listnode;
-			flag++ /*flag changes value*/
+			flag++; /*flag changes value*/
 		}
 		i++;
 		listnode = listnode->next;

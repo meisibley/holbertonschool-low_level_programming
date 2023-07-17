@@ -13,17 +13,17 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *nodelist, *node;
 	unsigned int i = 0;
 
-	if (*head == NULL)
-	{
-		node = *head;
-		node->n = n;
-		return (node);
-	}
 	node = malloc(sizeof(listint_t));
 	if (node == NULL)
 	{
 		free(node);
 		return (NULL);
+	}
+	if (*head == NULL)
+	{
+		node = *head;
+		node->n = n;
+		return (node);
 	}
 	if (idx == 0) /*node inserts in the beginning*/
 	{

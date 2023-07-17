@@ -9,7 +9,7 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int i = 0;
+	unsigned int i = 0, flag = 0;
 	listint_t *node, *listnode;
 
 	if (head == NULL)
@@ -23,13 +23,16 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	listnode = head;
 	while (listnode != NULL)
 	{
-		if (i == index)
+		if (i == index) /*found the node*/
 		{
 			node = listnode;
+			flag++ /*flag changes value*/
 		}
 		i++;
 		listnode = listnode->next;
 	}
 	free(listnode);
+	if (flag == 0) /*the node does not exist*/
+		return (NULL);
 	return (node);
 }

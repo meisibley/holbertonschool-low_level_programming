@@ -26,12 +26,10 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		if (i == index)
 		{
 			node = listnode;
-			free(listnode);
-			return (node);
 		}
 		i++;
 		listnode = listnode->next;
 	}
 	free(listnode);
-	return (NULL);
+	return (node);
 }

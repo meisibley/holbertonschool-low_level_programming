@@ -21,25 +21,29 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	ins = malloc(sizeof(dlistint_t));
 	if (ins == NULL)
+	{
 		return (NULL);
+	}
 	if (len == 0)
 	{
+		printf("I am here, beginning\n");
 		ins = add_dnodeint(h, n);
 		return (ins);
 	}
 	else if (len == idx)
 	{
+		printf("I am here, end\n");
 		ins = add_dnodeint_end(h, n);
 		return (ins);
 	}
 	else if (len > idx)
 	{
+		printf("I am here, middle\n");
 		temp = *h;
 		for (i = 0; i < idx - 1; i++)
 		{
 			temp = temp->next;
 		}
-		printf("I am here\n");
 		ins->n = n;
 		ins->next = temp->next;
 		ins->prev = temp;

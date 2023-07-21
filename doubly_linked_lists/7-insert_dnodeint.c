@@ -35,19 +35,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		ins = add_dnodeint_end(h, n);
 		return (ins);
 	}
-	else if (len > idx)
+	else if (len > idx + 1)
 	{
 		temp = *h;
 		for (i = 0; i < idx - 1; i++)
 			temp = temp->next;
-		/*ins->next = temp->next;
+		ins->next = temp->next;
 		temp->next->prev = ins;
 		temp->next = ins;
-		ins->prev = temp;*/
-		ins->next = temp;
+		ins->prev = temp;
+		/*ins->next = temp;
 		temp->prev->next = ins;
 		ins->prev = temp->prev;
-		temp->prev = ins;
+		temp->prev = ins;*/
 		return (ins);
 	}
 	else

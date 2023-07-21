@@ -26,7 +26,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	if (idx == 0)
 	{
-		ins = add_dnodeint_end(h, n);
+		ins->n = n;
+		ins->next = temp;
+		temp->prev = ins;
+		ins->prev = NULL;
 		return (ins);
 	}
 	else if (len == idx + 1)

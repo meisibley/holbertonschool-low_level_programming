@@ -4,7 +4,7 @@
  * hash_table_set - adds an element to the hash table.
  * @ht: given hash table
  * @key: key, can not be empty
- * @valuse: a value associated with the key
+ * @value: a value associated with the key
  *
  * Return: 1 if it succeeded, 0 otherwise
  */
@@ -30,11 +30,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = node;
 		free(node->key), free(node->value), free(node);
 	}
-	else if (strcmp(ht->array[index]->key, key) == 0)/*has same i&k node*/
-	{
-		ht->array[index]->value = strdup(value);
-	}
-	else /*array has same index but not same key node, add to before it*/
+	else /*array has same index have or have not same key, add at begn*/
 	{
 		temp = ht->array[index];
 		node->next = temp;

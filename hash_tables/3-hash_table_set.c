@@ -26,8 +26,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)(key), ht->size);
 	if (ht->array[index] == NULL)/*array doesn't have such index element*/
 	{
-		node->next = NULL;
 		ht->array[index] = node;
+		free(node->key), free(node->value), free(node);
+	}
+	else if (strcmp(ht->array[index]->key, key) == 0)
+	{
+		free(ht->array[index]->value);
+		ht->array[index]->value = node->value;
 		free(node->key), free(node->value), free(node);
 	}
 	else /*array has same index have or have not same key, add at begn*/

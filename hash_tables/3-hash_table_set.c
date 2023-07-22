@@ -32,8 +32,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else if (strcmp(ht->array[index]->key, key) == 0)
 	{
+		free(ht->array[index]->key);
 		free(ht->array[index]->value);
-		ht->array[index]->value = node->value;
+		free(ht->array[index]);
+		ht->array[index] = node;
 		free(node->key), free(node->value), free(node);
 	}
 	else /*array has same index have or have not same key, add at begn*/

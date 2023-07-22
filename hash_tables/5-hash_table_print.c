@@ -15,9 +15,7 @@ void hash_table_print(const hash_table_t *ht)
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return;
-	if (ht == NULL)
-		printf("{}\n");
-	else
+	if (ht != NULL && (ht->size > 0))
 	{
 		printf("{");
 		for (i = 0; i < ht->size; i++)

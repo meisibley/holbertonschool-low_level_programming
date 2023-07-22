@@ -11,7 +11,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t *node;
+	hash_node_t *node, *temp;
 
 	if (key == NULL || ht == NULL)
 		return (0);
@@ -21,22 +21,25 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(node);
 		return (0);
 	}
-	index = key_index((const unsigned char *)key, ht->size);
+	node->key = strdup(key);
+	node->value = strdup(value);
+	index = key_index((const unsigned char *)(key), ht->size);
 	if (ht->array[index] == NULL)/*array doesn't have such index element*/
 	{
-		ht->array[index]->key = strdup(key);
-		ht->array[index]->value = strdup(value);
-		ht->array[index]->next = NULL;
+		node->next = NULL;
+		ht->array[index] = node;
+		free(node->key), free(node->value), free(node);
 	}
-	else if (strcmp(ht->array[index]->key, key) == 0)/*has same i&key node*/
+	else if (strcmp(ht->array[index]->key, key) == 0)/*has same i&k node*/
+	{
 		ht->array[index]->value = strdup(value);
+	}
 	else /*array has same index but not same key node, add to before it*/
 	{
-		node = ht->array[index];
-		ht->array[index]->key = strdup(key);
-		ht->array[index]->value = strdup(value);
-		ht->array[index]->next = node;
-		free(node);
+		temp = ht->array[index];
+		node->next = temp;
+		ht->array[index] = node;
+		free(node->key), free(node->value), free(node);
 	}
 	return (1);
 }

@@ -10,7 +10,7 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int i, left = 0, m, right = (int)size -1;
+	int i, left = 0, m, right = (int)size - 1;
 
 	if (array == NULL || size < 1)
 		return (-1);
@@ -22,7 +22,9 @@ int binary_search(int *array, size_t size, int value)
 	{
 		m = (left + right) / 2;
 		if (array[m] == value)
+		{
 			return (m);
+		}
 		else
 		{
 			if (value > array[m])
